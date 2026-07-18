@@ -45,7 +45,7 @@ export class Scene12 {
                 </div>
                 
                 <div class="crystal-video-frame glass-card">
-                    <video id="crystal-video" class="hide" preload="auto">
+                    <video id="crystal-video" class="hide" preload="auto" playsinline webkit-playsinline>
                         <source src="${mediaConfig.videos.video3}" type="video/mp4">
                     </video>
                     <canvas id="crystal-fallback" class="hide"></canvas>

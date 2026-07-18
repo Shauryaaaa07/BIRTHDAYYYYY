@@ -50,7 +50,7 @@ export class EndingScene {
                     <p>Reveling the movements beforee .</p>
                 </div>
                 <div class="ending-video-frame glass-card">
-                    <video id="ending-video-3" class="hide" preload="auto">
+                    <video id="ending-video-3" class="hide" preload="auto" playsinline webkit-playsinline>
                         <source src="./assets/videos/video3.mp4" type="video/mp4">
                     </video>
                     <canvas id="ending-fallback-3" class="hide"></canvas>
@@ -66,7 +66,7 @@ export class EndingScene {
                     <p>A small message to carry with you in the year ahead.</p>
                 </div>
                 <div class="ending-video-frame glass-card">
-                    <video id="ending-video-4" class="hide" preload="auto">
+                    <video id="ending-video-4" class="hide" preload="auto" playsinline webkit-playsinline>
                         <source src="./assets/videos/video4.mp4" type="video/mp4">
                     </video>
                     <canvas id="ending-fallback-4" class="hide"></canvas>

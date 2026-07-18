@@ -41,7 +41,7 @@ export class Scene13 {
                 </div>
                 
                 <div class="thanks-video-frame glass-card">
-                    <video id="thanks-video" class="hide" preload="auto">
+                    <video id="thanks-video" class="hide" preload="auto" playsinline webkit-playsinline>
                         <source src="${mediaConfig.videos.video4}" type="video/mp4">
                     </video>
                     <canvas id="thanks-fallback" class="hide"></canvas>

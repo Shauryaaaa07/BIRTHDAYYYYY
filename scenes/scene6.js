@@ -87,7 +87,7 @@ export class Scene6 {
                 <div id="video-player-container" class="video-player-container glass-card hide">
                     <div class="video-frame">
                         <!-- Target Video 1 -->
-                         <video id="gift-video" class="hide" preload="auto">
+                         <video id="gift-video" class="hide" preload="auto" playsinline webkit-playsinline>
                              <source src="${mediaConfig.videos.video1}" type="video/mp4">
                              Your browser does not support HTML5 video.
                          </video>
