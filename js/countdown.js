@@ -152,12 +152,22 @@ export class CountdownScene {
         musicManager.playTrack(1);
         
         // Setup clock tick loop
-        this.updateClock();
-        this.timerInterval = setInterval(() => this.updateClock(), 1000);
+        const now = new Date();
+        const difference = this.targetDate.getTime() - now.getTime();
+        
+        if (difference <= 0) {
+            console.log("[CountdownScene] Target unlock time reached! Opening website...");
+            this.unlock();
+        } else {
+            this.updateClock();
+            this.timerInterval = setInterval(() => this.updateClock(), 1000);
+        }
         
         // Fade in
         setTimeout(() => {
-            this.container.classList.add('scene-active');
+            if (this.container) {
+                this.container.classList.add('scene-active');
+            }
         }, 50);
     }
 

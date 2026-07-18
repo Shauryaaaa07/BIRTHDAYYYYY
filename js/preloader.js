@@ -150,10 +150,14 @@ export class Preloader {
         console.log("[Preloader] Dismissing preloader screen.");
         this.preloaderScreen.classList.add('hide');
         
+        // Trigger onComplete immediately to preserve user interaction context for audio!
+        if (this.onComplete) this.onComplete();
+        
         // Remove from DOM after transition completes
         setTimeout(() => {
-            this.preloaderScreen.remove();
-            if (this.onComplete) this.onComplete();
+            if (this.preloaderScreen) {
+                this.preloaderScreen.remove();
+            }
         }, 1200);
     }
 }
