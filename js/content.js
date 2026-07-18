@@ -23,7 +23,7 @@ export const content = {
     // Scene 3 - Birthday Night
     birthdaySubText: "Today the universe celebrates you",
     birthdayTitleText: "HAPPYYY BIRTHDAYY TO YOUU TEJUUUU DONNN",
-    birthdayWishCardText: "Aap meri zindagi ke un khaas logon mein se hain jinki jagah kabhi koi nahi le sakta. Dua hai ki aapki har muskurahat hamesha barkarar rahe, har sapna poora ho, aur zindagi aapko sirf khushiyan de.<br><br>Hamesha aise hi khush rahiye. Happy Birthday! 🤍✨",
+    birthdayWishCardText: "Today isn't just your day, it's the day my favorite soul was born. Happyyy Birthdayyy ,Medhakkk !!",
     gatherRoundBtnText: "Gather round the Cake",
     moonMessages: [
         "I'm shining brighter because it's your birthday.",
@@ -132,7 +132,7 @@ export const content = {
     
     // Scene 14 - Final Message & Final Letter
     finalMessage: "This is the deepest message of our journey...",
-    finalEmotionalMsg: "ONCEEE AGAINNN HAPPYYY BIRTHDAY PAKODIIIII 😭<br><br><span style='font-size: 0.7em; letter-spacing: 4px; opacity: 0.8; font-weight: normal; display: block;'>SORRY</span>",
+    finalEmotionalMsg: "ONCEEE AGAINNN HAPPYYY BIRTHDAY PAKODIIIII 😭",
     finalLetter: {
         title: "One Last Surprise... ❤️",
         paragraphs: [

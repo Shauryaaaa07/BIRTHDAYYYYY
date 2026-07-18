@@ -478,7 +478,7 @@ export class Scene2_5 {
     completeTransition() {
         if (this.animationFrameId) cancelAnimationFrame(this.animationFrameId);
         if (this.transitionTimer) clearTimeout(this.transitionTimer);
-        router.navigate('scene3');
+        router.navigate('scene2_7');
     }
 
     exit() {

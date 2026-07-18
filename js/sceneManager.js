@@ -16,6 +16,7 @@ export class SceneManager {
             'scene1': { path: '../scenes/scene1.js', className: 'Scene1' },
             'scene2': { path: '../scenes/scene2.js', className: 'Scene2' },
             'scene2_5': { path: '../scenes/scene2_5.js', className: 'Scene2_5' },
+            'scene2_7': { path: '../scenes/scene2_7.js', className: 'Scene2_7' },
             'scene3': { path: '../scenes/scene3.js', className: 'Scene3' },
             'scene4': { path: '../scenes/scene4.js', className: 'Scene4' },
             'scene5': { path: '../scenes/scene5.js', className: 'Scene5' },
