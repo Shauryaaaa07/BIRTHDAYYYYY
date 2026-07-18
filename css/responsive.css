@@ -1,0 +1,142 @@
+/* ==========================================================================
+   TEJU'S BIRTHDAY EXPERIENCE - RESPONSIVE LAYOUT SYSTEM (responsive.css)
+   ========================================================================== */
+
+/* 1. Viewport Adaptation and Universal Layout Settings */
+@media (max-width: 1200px) {
+    .preloader-title {
+        font-size: 2rem;
+        letter-spacing: 6px;
+    }
+}
+
+/* 2. Tablet & Landscape Mobile (Viewport width < 1024px) */
+@media (max-width: 1024px) {
+    :root {
+        --color-bg-card: rgba(13, 13, 30, 0.65); /* Darker backdrop to boost readability */
+    }
+
+    .audio-widget {
+        top: 20px;
+        right: 20px;
+        padding: 8px 12px;
+    }
+
+    .audio-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .sound-wave {
+        height: 14px;
+        width: 16px;
+        gap: 2px;
+    }
+}
+
+/* 3. Small Tablets & Large Phones (Viewport width < 768px) */
+@media (max-width: 768px) {
+    .preloader-title {
+        font-size: 1.6rem;
+        letter-spacing: 5px;
+        margin-bottom: 40px;
+    }
+
+    .preloader-content {
+        max-width: 320px;
+    }
+
+    /* Adjust glass-card default parameters for smaller screen real estate */
+    .glass-card {
+        border-radius: 16px;
+        padding: 24px 16px !important;
+    }
+
+    .glass-btn {
+        padding: 12px 24px;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    /* Debug menu repositioning for accessibility */
+    .debug-menu {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .debug-content {
+        width: 220px;
+    }
+}
+
+/* 4. Small Mobile Phones (Viewport width < 480px) */
+@media (max-width: 480px) {
+    /* Safe-zone padding for notch devices */
+    body {
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+
+    .preloader-title {
+        font-size: 1.4rem;
+        letter-spacing: 4px;
+    }
+
+    .audio-widget {
+        top: 15px;
+        right: 15px;
+        padding: 6px 10px;
+        gap: 8px;
+    }
+
+    .sound-wave {
+        display: none; /* Hide sound waves on very small viewports to save space */
+    }
+
+    /* Form, game board and letter scale adaptations */
+    .glass-card {
+        width: 92% !important;
+        margin: 0 auto;
+    }
+}
+
+/* 5. Height-based Responsiveness (e.g. short landscape phones) */
+@media (max-height: 550px) {
+    .preloader-title {
+        margin-bottom: 20px;
+    }
+
+    .preloader-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 90%;
+    }
+
+    .preloader-loader {
+        width: 50%;
+    }
+
+    .enter-btn {
+        margin-top: 0;
+    }
+}
+
+/* 6. Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-delay: 0s !important;
+        animation-duration: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0s !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .aurora-bg, .aurora-glow {
+        animation: none !important;
+        opacity: 0.25 !important;
+    }
+
+    #global-bg-canvas {
+        opacity: 0.3 !important;
+    }
+}

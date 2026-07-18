@@ -1,0 +1,14 @@
+{
+  "name": "tejus-birthday-experience",
+  "version": "1.0.0",
+  "description": "A premium, cinematic, interactive birthday experience for Teju.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

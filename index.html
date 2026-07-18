@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.onerror = function(message, source, lineno, colno, error) {
+            const errDiv = document.createElement('div');
+            errDiv.style.position = 'fixed';
+            errDiv.style.top = '10px';
+            errDiv.style.left = '10px';
+            errDiv.style.right = '10px';
+            errDiv.style.background = 'rgba(255, 0, 0, 0.95)';
+            errDiv.style.color = 'white';
+            errDiv.style.padding = '15px';
+            errDiv.style.zIndex = '99999';
+            errDiv.style.fontFamily = 'monospace';
+            errDiv.style.fontSize = '12px';
+            errDiv.style.whiteSpace = 'pre-wrap';
+            errDiv.style.borderRadius = '8px';
+            errDiv.style.border = '2px solid white';
+            errDiv.innerText = "Error: " + message + "\nSource: " + source + "\nLine: " + lineno + ":" + colno + "\nStack: " + (error ? error.stack : 'N/A');
+            document.body.appendChild(errDiv);
+        };
+        window.onunhandledrejection = function(event) {
+            const errDiv = document.createElement('div');
+            errDiv.style.position = 'fixed';
+            errDiv.style.top = '10px';
+            errDiv.style.left = '10px';
+            errDiv.style.right = '10px';
+            errDiv.style.background = 'rgba(255, 100, 0, 0.95)';
+            errDiv.style.color = 'white';
+            errDiv.style.padding = '15px';
+            errDiv.style.zIndex = '99999';
+            errDiv.style.fontFamily = 'monospace';
+            errDiv.style.fontSize = '12px';
+            errDiv.style.whiteSpace = 'pre-wrap';
+            errDiv.style.borderRadius = '8px';
+            errDiv.style.border = '2px solid white';
+            errDiv.innerText = "Unhandled Rejection: " + event.reason + "\nStack: " + (event.reason ? event.reason.stack : 'N/A');
+            document.body.appendChild(errDiv);
+        };
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="A premium, cinematic, interactive birthday experience for Teju.">
+    <title>PAKODIIII'S BIRTHDAYYYY</title>
+    <!-- Google Fonts: Cinzel for cinematic serif, Montserrat for modern sans-serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+    <!-- Global Starfield Canvas (Persistent Background) -->
+    <canvas id="global-bg-canvas"></canvas>
+
+    <!-- Global Aurora Backdrop -->
+    <div class="aurora-bg">
+        <div class="aurora-glow aurora-1"></div>
+        <div class="aurora-glow aurora-2"></div>
+        <div class="aurora-glow aurora-3"></div>
+    </div>
+
+    <!-- Cinematic Preloader -->
+    <div id="preloader" class="preloader-container">
+        <div class="preloader-content">
+            <div class="preloader-title">WELCOMEE TEJUUUU DONNN</div>
+            <div class="preloader-loader">
+                <div class="loader-track">
+                    <div id="loader-bar" class="loader-fill"></div>
+                </div>
+                <div id="loader-percentage" class="loader-text">0%</div>
+            </div>
+            <div id="preloader-status" class="loader-status">Gathering cosmic dust...</div>
+            <button id="enter-btn" class="glass-btn enter-btn hide">Toh suru kreee...</button>
+        </div>
+    </div>
+
+    <!-- Main Viewport for Scenes -->
+    <main id="app" class="app-viewport"></main>
+
+    <!-- Floating Glassmorphic Audio Controller -->
+    <div id="audio-widget" class="audio-widget hide">
+        <button id="audio-toggle" class="audio-btn" aria-label="Toggle Sound">
+            <svg class="sound-icon sound-on" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.85 14,18.71V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.77 16.5,12M3,9V15H7L12,20V4L7,9H3Z" />
+            </svg>
+            <svg class="sound-icon sound-off hide" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M12,4L7,9H3V15H7L12,20V4M16.5,12C16.5,10.23 15.5,8.71 14,7.97V11.88L16.05,13.93C16.34,13.33 16.5,12.68 16.5,12M19,12C19,12.94 18.8,13.82 18.46,14.64L19.97,16.15C20.62,14.91 21,13.5 21,12C21,7.72 18,4.14 14,3.23V5.29C16.89,6.15 19,8.83 19,12M4.27,3L3,4.27L7.73,9H3V15H7L12,20V13.27L16.25,17.53C15.58,18.04 14.83,18.44 14,18.66V20.72C15.38,20.44 16.63,19.78 17.67,18.95L20.73,22L22,20.73L4.27,3Z" />
+            </svg>
+        </button>
+        <div class="sound-wave">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+            <span class="bar bar-4"></span>
+        </div>
+    </div>
+
+    <!-- Hidden Debug Controller for Testing & Bypasses -->
+    <div id="debug-menu" class="debug-menu hide">
+        <button id="debug-trigger" class="debug-trigger" title="Developer Controls">⚙️</button>
+        <div id="debug-content" class="debug-content glass-card">
+            <h4>Bypass Menu</h4>
+            <button id="debug-skip-countdown" class="debug-btn">Skip Countdown</button>
+            <div class="scene-selector-wrapper">
+                <label for="debug-scene-select">Jump to:</label>
+                <select id="debug-scene-select">
+                    <option value="countdown">Countdown Lock</option>
+                    <option value="scene1">Scene 1: Tic Tac Toe</option>
+                    <option value="scene2">Scene 2: Nature Theme</option>
+                    <option value="scene2_5">Scene 2.5: Rain Memory</option>
+                    <option value="scene3">Scene 3: Happy Birthday</option>
+                    <option value="scene4">Scene 4: Birthday Cake</option>
+                    <option value="scene5">Scene 5: Balloon Release</option>
+                    <option value="scene6">Scene 6: Luxury Gift Box</option>
+                    <option value="scene7">Scene 7: Photos & Letter</option>
+                    <option value="scene8">Scene 8: NDA Dream</option>
+                    <option value="scene9">Scene 9: Golgappa Date</option>
+                    <option value="scene10">Scene 10: Heart Rain & Wish Tree</option>
+                    <option value="scene11">Scene 11: Memory Orbs</option>
+                    <option value="scene12">Scene 12: Final Surprise</option>
+                    <option value="scene13">Scene 13: Thank You</option>
+                    <option value="scene14">Scene 14: Final Message & Ending</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JavaScript Modules -->
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>
