@@ -110,16 +110,13 @@ export class Scene7 {
             // Get path dynamically from mediaConfig
             const photoInfo = mediaConfig.photos[i - 1];
             const imgPath = photoInfo ? photoInfo.path : `./assets/photos/photo${i}.jpg`;
-            const isPhotoAvailable = window.assetRegistry && window.assetRegistry.photos[imgPath];
             
             const img = document.createElement('img');
             img.className = 'slide-img';
-            
-            if (isPhotoAvailable) {
-                img.src = imgPath;
-            } else {
+            img.onerror = () => {
                 img.src = this.generatePlaceholderPhoto(i);
-            }
+            };
+            img.src = imgPath;
             
             // Enable slide click to trigger manual skip
             img.addEventListener('click', () => this.nextSlide());

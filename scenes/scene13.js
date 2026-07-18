@@ -172,8 +172,7 @@ export class Scene13 {
         const video = this.container.querySelector('#thanks-video');
         const canvas = this.container.querySelector('#thanks-fallback');
         
-        const videoPath = mediaConfig.videos.video4;
-        const isVideoAvailable = window.assetRegistry && window.assetRegistry.videos[videoPath];
+        const isVideoAvailable = true;
         
         if (isVideoAvailable) {
             video.classList.remove('hide');

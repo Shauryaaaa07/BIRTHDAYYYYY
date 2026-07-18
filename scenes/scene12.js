@@ -136,8 +136,7 @@ export class Scene12 {
         const video = this.container.querySelector('#crystal-video');
         const canvas = this.container.querySelector('#crystal-fallback');
         
-        const videoPath = mediaConfig.videos.video3;
-        const isVideoAvailable = window.assetRegistry && window.assetRegistry.videos[videoPath];
+        const isVideoAvailable = true;
         
         if (isVideoAvailable) {
             video.classList.remove('hide');

@@ -31,6 +31,7 @@ export class Preloader {
                 '../scenes/scene1.js',
                 '../scenes/scene2.js',
                 '../scenes/scene2_5.js',
+                '../scenes/scene2_7.js',
                 '../scenes/scene3.js',
                 '../scenes/scene4.js',
                 '../scenes/scene5.js',

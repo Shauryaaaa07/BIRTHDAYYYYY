@@ -270,8 +270,7 @@ export class Scene6 {
         this.container.querySelector('.gift-instructions').classList.add('hide');
 
         // Check if Video 1 exists in assets
-        const videoPath = mediaConfig.videos.video1;
-        const isVideoAvailable = window.assetRegistry && window.assetRegistry.videos[videoPath];
+        const isVideoAvailable = true;
         
         this.videoElement = this.container.querySelector('#gift-video');
         const canvasFallback = this.container.querySelector('#video-fallback-canvas');
