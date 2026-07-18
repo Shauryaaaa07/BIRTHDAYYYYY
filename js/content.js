@@ -132,6 +132,7 @@ export const content = {
     
     // Scene 14 - Final Message & Final Letter
     finalMessage: "This is the deepest message of our journey...",
+    finalEmotionalMsg: "ONCEEE AGAINNN HAPPYYY BIRTHDAY PAKODIIIII 😭<br><br><span style='font-size: 0.7em; letter-spacing: 4px; opacity: 0.8; font-weight: normal; display: block;'>SORRY</span>",
     finalLetter: {
         title: "One Last Surprise... ❤️",
         paragraphs: [

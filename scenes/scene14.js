@@ -710,8 +710,9 @@ export class Scene14 {
             /* Stage 4: Fade to Black */
             .final-emotional-msg {
                 font-family: var(--font-serif);
-                font-size: 2.2rem;
-                letter-spacing: 4px;
+                font-size: 2rem;
+                line-height: 1.45;
+                letter-spacing: 3px;
                 color: var(--color-gold);
                 text-shadow: 0 0 20px var(--color-gold-glow);
                 opacity: 0;
@@ -719,6 +720,13 @@ export class Scene14 {
                 animation: final-text-fade 6s cubic-bezier(0.25, 1, 0.5, 1) forwards 1s;
                 text-align: center;
                 padding: 0 20px;
+                max-width: 90vw;
+            }
+            @media (max-width: 600px) {
+                .final-emotional-msg {
+                    font-size: 1.35rem;
+                    letter-spacing: 1px;
+                }
             }
             
             @keyframes credits-crawl {

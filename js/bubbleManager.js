@@ -31,7 +31,7 @@ class BubbleManager {
         
         // Spawn loops
         this.bubbleSpawnTimer = setInterval(() => this.spawnBubble(), 1000);
-        this.rainSpawnTimer = setInterval(() => this.spawnRainItem(), 450); // Frequent gentle rain of emojis
+        // this.rainSpawnTimer = setInterval(() => this.spawnRainItem(), 450); // Frequent gentle rain of emojis
 
         // Render loop
         this.tick();
