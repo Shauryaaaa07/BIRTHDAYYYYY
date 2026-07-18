@@ -326,25 +326,22 @@ body, html {
     opacity: 0;
     visibility: hidden;
     transform: translate3d(0, 0, -150px) rotateX(8deg);
-    filter: blur(8px);
     transition: opacity var(--transition-slow), 
                 transform var(--transition-slow), 
-                filter var(--transition-slow),
                 visibility var(--transition-slow);
+    will-change: transform, opacity;
 }
 
 .scene-active {
     opacity: 1;
     visibility: visible;
     transform: translate3d(0, 0, 0) rotateX(0deg);
-    filter: blur(0px);
 }
 
 .scene-exit {
     opacity: 0;
     visibility: hidden;
     transform: translate3d(0, 0, 150px) rotateX(-8deg);
-    filter: blur(8px);
 }
 
 /* ==========================================================================
