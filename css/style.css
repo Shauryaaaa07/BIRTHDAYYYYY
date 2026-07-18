@@ -309,9 +309,11 @@ body, html {
     height: 100%;
     z-index: var(--z-scene-content);
     overflow: hidden;
+    perspective: 1200px;
+    transform-style: preserve-3d;
 }
 
-/* Base Scene Class styles */
+/* Base Scene Class styles with cinematic 3D corridor transitions */
 .scene-container {
     position: absolute;
     top: 0;
@@ -323,8 +325,8 @@ body, html {
     align-items: center;
     opacity: 0;
     visibility: hidden;
-    transform: scale(1.05) translateZ(0);
-    filter: blur(10px);
+    transform: translate3d(0, 0, -150px) rotateX(8deg);
+    filter: blur(8px);
     transition: opacity var(--transition-slow), 
                 transform var(--transition-slow), 
                 filter var(--transition-slow),
@@ -334,15 +336,15 @@ body, html {
 .scene-active {
     opacity: 1;
     visibility: visible;
-    transform: scale(1) translateZ(0);
+    transform: translate3d(0, 0, 0) rotateX(0deg);
     filter: blur(0px);
 }
 
 .scene-exit {
     opacity: 0;
     visibility: hidden;
-    transform: scale(0.95) translateZ(0);
-    filter: blur(10px);
+    transform: translate3d(0, 0, 150px) rotateX(-8deg);
+    filter: blur(8px);
 }
 
 /* ==========================================================================
